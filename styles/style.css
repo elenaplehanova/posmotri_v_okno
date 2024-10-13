@@ -13,7 +13,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -35,4 +35,222 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  align-items: end;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  padding-inline: 30px;
+  block-size: inherit;
+}
+.content__list {
+  position: relative;
+  max-block-size: 298px;
+  overflow: auto;
+  margin-block-start: 17px;
+  display: grid;
+}
+.content__list-item:not(:first-child) {
+  margin-block-start: 26px;
+}
+.content__details {
+  block-size: 100%;
+  inline-size: 100%;
+  min-inline-size: 402px;
+}
+.content__video-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2px;
+  gap: 10px;
+}
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-inline-size: 190px;
+}
+.content__video-card-description {
+  line-height: 0.9;
+  max-inline-size: 190px;
+  max-block-size: 65px;
+  overflow: hidden;
+}
+
+.content__video-card-thumbnail {
+  inline-size: 194px;
+  block-size: 103px;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__accent {
+  color: #545050;
+  text-align: center;
+  text-justify: center;
+}
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin: 2px;
+}
+.content__card-link:hover .content__video-card-title,
+.content__card-link:hover .content__video-card-description {
+  text-decoration: underline;
+}
+.content__card-link:active {
+  background-color: #545050;
+}
+.content__card-link:focus {
+  outline: 0;
+}
+.content__card-link:focus-visible {
+  border: 1px solid #fff;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.search-form {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, auto);
+}
+.search-form__fieldset {
+  border: 0;
+}
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+}
+.search-form__label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 2px;
+}
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+}
+.search-form__label:hover .search-form__label-text {
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+.search-form__textfield {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background-color: transparent;
+  border-inline: 0;
+  border-block: 1px solid #fff;
+  inline-size: 225px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+.search-form__submit-button {
+  block-size: fit-content;
+  inline-size: 194px;
+  align-self: end;
+}
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: inline-block;
+  inline-size: 19px;
+  block-size: 19px;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  inline-size: 15px;
+  block-size: 15px;
+  background-color: #fff;
+  inset: 0;
+  margin: auto;
+}
+.search-form__checkbox-list {
+  display: flex;
+  gap: 10px;
+}
+
+.result {
+  margin-block-start: 80px;
+}
+.result__video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.result__video-container {
+  position: relative;
+  inline-size: 711px;
+  block-size: 386px;
+  margin-block-end: 12px;
+}
+
+.title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 0.94;
+  text-transform: uppercase;
+  margin-block-start: 5px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.button {
+  color: inherit;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid currentColor;
+  padding: 6px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+.button:active {
+  background-color: #545050;
+}
+.button:focus {
+  outline: none;
+}
+.button:focus-visible {
+  border: 3px double currentColor;
+}
+
+.more-button {
+  inline-size: 100%;
+  margin-block-start: 30px;
 }

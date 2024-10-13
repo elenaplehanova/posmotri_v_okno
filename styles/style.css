@@ -109,6 +109,9 @@ ol {
 .content__card-link:hover .content__video-card-description {
   text-decoration: underline;
 }
+.content__card-link:active {
+  background-color: #545050;
+}
 .content__card-link:focus {
   outline: 0;
 }
